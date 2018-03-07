@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-12">
+      <app-table-controls #tablecontrols [selectedCheckboxCount]="selectedCheckboxCount" [showAddEditDeleteBtn]="showAddEditDeleteBtn" [showEnableDisableBtn]="showEnableDisableBtn" [showSearchBtn]="showSearchBtn" [showCSVPrintBtn]="showCSVPrintBtn" [showCSVBtn]="showCSVBtn" [showPrintBtn]="showPrintBtn" [showSaveBtn]="showSaveBtn"
+       [featureName]="featureName" (refreshList)="refreshListData.emit()" (onAdd)="onAddItem.emit()" (onEdit)="onEditItem.emit(selectedList)" (onDelete)="onDeleteItems.emit(selectedList)"
+      (onEnable)="onEnableItems.emit(selectedList)" (onDisable)="onDisableItems.emit(selectedList)" (onExport)="onExportItems.emit(selectedList)"
+      (onPrint)="onPrintItems.emit(selectedList)" [headers]="headers"></app-table-controls>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h6 class="table-heading">{{heading}}</h6>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-left">
+              <input class="row-checkbox" type="checkbox" (click)="selectAllRows($event.target.checked)" [checked]="isAllSelected" />
+            </th>
+            <th *ngFor="let header of headers">{{header.name}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list | paginate: { id: 'server', itemsPerPage: itemsPerPage, currentPage: pageNumber, totalItems: totalItems }; let itemIndex = index;" class="item-row" [ngClass]="{ selected: item.isSelected }" (click)="onTbodyRowClick($event, item[primaryKey])">
+
+            <td class="text-left">
+              <input class="row-checkbox" type="checkbox" (click)="selectRow($event.target.checked, itemIndex)"  [checked]="item.isSelected"
+              />
+            </td>
+            <td *ngFor="let header of headers" [ngClass]="[(item.cellClass && item.cellKey == header.key ) ? item.cellClass : '', (header.isPrice || header.isNumber) ? 'text-right' : '' ]">
+              {{header.isPrice ? ( item[header.key] | number:'1.2-2' ) : item[header.key]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row no-data-found-container" *ngIf="list && !list.length">
+  <div class="text-center no-data-found">No Data Found</div>
+</div>
+<div class="row table-footer">
+  <div class="col-12">
+    <pagination-controls (pageChange)="getPage($event)"  id="server"></pagination-controls>
+    <div class="pagination-container">
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,129 @@
+$primaryFontColor: #000;
+$borderColor: #e9e9e9;
+$themeColor: #008afe;
+$redColor: red;
+$greenColor: green;
+$lightGreenColor: lightgreen;
+$primaryBtnColor: #008afe;
+$secondaryBtnColor: #ffffff;
+$montserratBold: 'MontserratBold';
+$montserratLight: 'MontserratLight';
+$montserratRegular: 'Montserrat';
+$colorPickerBG: #f5f9fc;
+$headerColor: rgb(0, 195, 255);
+$iconSpriteImageUrl: url('/assets/images/icons.png');
+$formHeadingColor: #b8b7b7;
+$canvasBackGroundColor: rgb(243, 243, 243);
+$controlBGColor: #f3f3f3;
+
+:host {
+    width: 100%;
+    button {
+        cursor: pointer;
+        color: $primaryFontColor;
+        font-size: 13px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0;
+        &.primary-btn {
+            color: #fff;
+            background-color: $primaryBtnColor;
+        }
+        &.secondary-btn {
+            background-color: $secondaryBtnColor;
+        }
+        &.inlinesave {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        &.inlinecancel {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    .text-left{
+        text-align: left;
+    }
+    .table-heading {
+        color: black;
+        margin: 25px 0;
+    }
+    .table {
+        width: 100%;
+        background-color: #f3f3f3;
+        max-width: unset;
+        margin-bottom: 0;
+        border: 1px solid rgb(228, 222, 222);
+        .row-checkbox {
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+            background-color: white;
+            &:checked {
+                color: rgb(0, 138, 254);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        thead {
+            color: black;
+            font-size: 12px;
+            font-family: $montserratBold;
+            tr {
+                th {
+                    padding: 8px;
+                    vertical-align: middle;
+                    &:first-child {
+                        width: 55px;
+                    }
+                }
+            }
+        }
+        tbody {
+            background-color: white;
+            color: black;
+            tr {
+                &.item-row {
+                    border-bottom: 1px solid rgb(228, 222, 222);
+                    &.selected {
+                        background-color: #9bd1ff;
+                        color: white;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                    &:hover {
+                        color: rgb(0, 138, 254);
+                        cursor: pointer;
+                    }
+                }
+                td {
+                    padding: 8px;
+                    vertical-align: middle;
+                    &:first-child {
+                        width: 55px;
+                    }
+                    input {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    .table-footer {
+        pagination-controls::ng-deep {
+            pagination-template::ng-deep {
+                ul{
+                    background: $controlBGColor;
+                    padding: 8px;
+                    text-align: right;
+                    border: 1px solid $borderColor;
+                    border-top: none;
+                }
+            }
+        }
+    }
+}

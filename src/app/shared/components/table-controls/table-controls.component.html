@@ -1,0 +1,47 @@
+<div class="row table-controls">
+    <div class="col-12 left-section">
+      <div class="btn-group-container" *ngIf="showAddEditDeleteBtn">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default icon-btn" (click)="onAdd.emit()">
+            <img class="add" src="/assets/images/transperant_image.png" alt="Add Part icon">Add
+          </button>
+          <button type="button" class="btn btn-default icon-btn" [disabled]="!isOneSelected() || !canEdit" (click)="onEdit.emit()">
+            <img class="edit" src="/assets/images/transperant_image.png" alt="Edit icon">Edit
+          </button>
+          <button type="button" class="btn btn-default icon-btn" [disabled]="isNoneSelected()" (click)="onDelete.emit()">
+            <img class="delete" src="/assets/images/transperant_image.png" alt="Delete icon">Delete
+          </button>
+        </div>
+      </div>
+      <div class="btn-group-container">
+        <div class="btn-group"  *ngIf="showBackArrow">
+          <div class="btn btn-default back-arrow-container" (click)="navigateBack()"></div>
+          <div class="btn btn-default back-link link" (click)="navigateBack()" >Back</div>
+          <div class="btn btn-default back-link">{{featureName}}</div>
+        </div>
+      </div>
+      <div class="btn-group-container" *ngIf="showEnableDisableBtn">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default enable" [disabled]="isNoneSelected()" (click)="onEnable.emit()"> Enable</button>
+          <button type="button" class="btn btn-default disable" [disabled]="isNoneSelected()" (click)="onDisable.emit()">Disable</button>
+        </div>
+      </div>
+      <div class="search-bar" *ngIf="showSearchBtn">
+        <input type="search" class="search-input" placeholder="Search" name="search" [(ngModel)]="searchedText" (keyup)="searchText$.next($event.target.value)">
+        <img class="search-icon" src="/assets/images/transperant_image.png" alt="Search icon">
+      </div>
+      <div class="btn-group-container right-aligned">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default icon-btn" (click)="onExport.emit()" *ngIf="showCSVBtn">
+            <img class="csv" src="/assets/images/transperant_image.png" alt="Export Icon">CSV
+          </button>
+          <button type="button" class="btn btn-default icon-btn" (click)="onPrint.emit()"  *ngIf="showPrintBtn">
+            <img class="print" src="/assets/images/transperant_image.png" alt="Print Icon">Print
+          </button>
+          <button type="button" class="btn btn-default icon-btn" (click)="onSave.emit()" *ngIf="showSaveBtn">
+            <img class="save" src="/assets/images/transperant_image.png" alt="Save icon">Save
+          </button>
+        </div>
+      </div>
+    </div>
+   </div>

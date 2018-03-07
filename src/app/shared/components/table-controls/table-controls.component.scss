@@ -1,0 +1,181 @@
+$primaryFontColor: #000;
+$borderColor: #e9e9e9;
+$themeColor: #008afe;
+$redColor: red;
+$greenColor: green;
+$lightGreenColor: lightgreen;
+$primaryBtnColor: #008afe;
+$secondaryBtnColor: #ffffff;
+$montserratBold: 'MontserratBold';
+$montserratLight: 'MontserratLight';
+$montserratRegular: 'Montserrat';
+$colorPickerBG: #f5f9fc;
+$headerColor: rgb(0, 195, 255);
+$iconSpriteImageUrl: url('/assets/images/icons.png');
+$formHeadingColor: #b8b7b7;
+$canvasBackGroundColor: rgb(243, 243, 243);
+$controlBGColor: #f3f3f3;
+
+.table-controls {
+    background-color: #f3f3f3;
+    padding: 5px 0;
+    .btn-group-container {
+        button {
+            height: 45px;
+        }
+    }
+
+    .search-bar {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        .search-input {
+            color: $primaryFontColor;
+            height: 45px;
+            width: 272px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            padding-left: 15px;
+            border: none;
+            background-color: white;
+            &:focus {
+                outline: none;
+            }
+        }
+        .search-icon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 18px;
+            right: 10px;
+            background: $iconSpriteImageUrl -276px -34px;
+        }
+    }
+    .right-aligned {
+        float: right;
+    }
+    .btn-group-container {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0;
+        margin-right: 8px;
+        button {
+            cursor: pointer;
+            color: $primaryFontColor;
+            font-size: 13px;
+            margin-top: 5px;
+            margin-left: -2px;
+            margin-bottom: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-right: 2px solid $borderColor;
+            border-radius: 0;
+            &:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            &:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-right: none;
+            }
+            &.primary-btn {
+                &:enabled {
+                    color: #fff;
+                    background-color: $primaryBtnColor;
+                }
+            }
+            &.secondary-btn {
+                background-color: $secondaryBtnColor;
+            }
+            &:enabled {
+                background-color: $secondaryBtnColor;
+                &:hover {
+                    background-color: $primaryBtnColor;
+                    color: $secondaryBtnColor;
+                }
+            }
+            &:disabled {
+                cursor: not-allowed;
+                color: $primaryFontColor;
+                background-color: $secondaryBtnColor;
+            }
+            &.enable {
+                color: $lightGreenColor;
+            }
+            &.disable {
+                color: $redColor;
+            }
+            &:focus {
+                outline: none;
+            }
+            &.export-csv-btn {
+                color: $primaryFontColor;
+                border: none;
+                background-color: $secondaryBtnColor;
+            }
+            &.icon-btn {
+                img {
+                    width: 25px;
+                    height: 25px;
+                    vertical-align: middle;
+                    &.add {
+                        background: $iconSpriteImageUrl -156px -62px;
+                    }
+                    &.edit {
+                        background: $iconSpriteImageUrl -156px -184px;
+                    }
+                    &.delete {
+                        background: $iconSpriteImageUrl -156px -123px;
+                    }
+                    &.print {
+                        background: $iconSpriteImageUrl -154px -392px;
+                    }
+                    &.csv {
+                        background: $iconSpriteImageUrl -156px -302px;
+                    }
+                    &.save {
+                        background: $iconSpriteImageUrl -155px -241px;
+                    }
+                }
+                &:hover:enabled {
+                    .add {
+                        background: $iconSpriteImageUrl -156px -32px;
+                    }
+                    .edit {
+                        background: $iconSpriteImageUrl -156px -152px;
+                    }
+                    .delete {
+                        background: $iconSpriteImageUrl -156px -94px;
+                    }
+                    .print {
+                        background: $iconSpriteImageUrl -154px -362px;
+                    }
+                    .csv {
+                        background: $iconSpriteImageUrl -156px -274px;
+                    }
+                    .save {
+                        background: $iconSpriteImageUrl -156px -212px;
+                    }
+                    .backArrow {
+                        background: $iconSpriteImageUrl -153px -336px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .table-controls {
+        .right-aligned {
+            float: none;
+        }
+        .btn-group-container {
+            button {
+                padding: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="table-management-container">
+  <h3 class="text-center">Table Management Application</h3>
+  <ngx-app-table 
+  		#managetable
+  		[heading]="heading" 
+  		[primaryKey]="primaryKey" 
+  		[headers]="headers" 
+  		[list]="list" 
+      [totalItems] = "totalItems"
+  		[pageNumber]="pageNumber"
+  		[showDetails]="showDetails" 
+  		[showAddEditDeleteBtn]="showAddEditDeleteBtn" 
+  		[showEnableDisableBtn]="showEnableDisableBtn" 
+  		[showSearchBtn]="showSearchBtn" 
+  		[showCSVBtn]="showCSVBtn" 
+  		[showPrintBtn]="showPrintBtn" 
+  		(onAddItem)="onAddItem()"
+  		(onEditItem)="onEditItem($event)"
+  		(onDeleteItems)="onDeleteItems($event)"
+  		(onEnableItems)="onEnableItems($event)"
+  		(onDisableItems)="onDisableItems($event)"
+  		(refreshListData)="reloadTableList($event)"
+  		(onExportItems)="onExportItems($event)"
+  		(onPrintItems)="onPrintItems($event)"
+  		(onShowDetails)="showItemDetails($event)">
+  		</ngx-app-table>
+</div>
