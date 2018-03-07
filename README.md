@@ -5,39 +5,39 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `ngx-app-table` is an Angular component for presenting table with data and its controls. This component provides following features.
 
 ### Input Properties
-
-  @Input() list = [];
-  @Input() headers = [];
-  @Input() pageNumber = 1;
-  @Input() totalItems = 0;
-  @Input() primaryKey = 'id';
-  @Input() itemsPerPage = 10;
-  @Input() heading: String = null;
+```
+  - list
+  - headers  
+  - pageNumber
+  - totalItems
+  - primaryKey
+  - itemsPerPage
+  - heading
   
-  @Input() showCSVBtn: Boolean = false;
-  @Input() showDetails: Boolean = false;
-  @Input() showPrintBtn: Boolean = false;
-  @Input() showSearchBtn: Boolean = false;
-  @Input() showEnableDisableBtn: Boolean = false;
-  @Input() showAddEditDeleteBtn: Boolean = false;
-
+  - showCSVBtn
+  - showDetails
+  - showPrintBtn
+  - showSearchBtn
+  - showEnableDisableBtn
+  - showAddEditDeleteBtn
+```
 ### Output Events
-
-  @Output() onAddItem = new EventEmitter();
-  @Output() onEditItem = new EventEmitter();
-  @Output() onSaveItems = new EventEmitter();
-  @Output() onPrintItems = new EventEmitter();
-  @Output() onShowDetails = new EventEmitter();
-  @Output() onExportItems = new EventEmitter();
-  @Output() onDeleteItems = new EventEmitter();
-  @Output() onEnableItems = new EventEmitter();
-  @Output() onDisableItems = new EventEmitter();
-  @Output() refreshListData
-  
+```
+  - onAddItem
+  - onEditItem
+  - onSaveItems
+  - onPrintItems
+  - onShowDetails
+  - onExportItems
+  - onDeleteItems
+  - onEnableItems
+  - onDisableItems
+  - refreshListData
+```
 ### Usage
 
 #### html file:
-
+```
 <ngx-app-table 
   		#managetable
   		[heading]="heading" 
@@ -62,9 +62,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   		(onPrintItems)="onPrintItems($event)"
   		(onShowDetails)="showItemDetails($event)">
   		</ngx-app-table>
-
+```
 #### ts file:
-
+```
 export class TableManagementComponent implements OnInit {
 
   @ViewChild('managetable') managetable;
@@ -146,7 +146,7 @@ export class TableManagementComponent implements OnInit {
   		alert('Row clicked');
   }
 }
-
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
