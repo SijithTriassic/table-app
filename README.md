@@ -1,7 +1,5 @@
 # TableApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
-
 `ngx-app-table` is an Angular component for presenting table with data and its controls. This component provides following features.
 
 ### Input Properties
@@ -23,16 +21,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```
 ### Output Events
 ```
-  - onAddItem
-  - onEditItem
-  - onSaveItems
-  - onPrintItems
-  - onShowDetails
-  - onExportItems
-  - onDeleteItems
-  - onEnableItems
-  - onDisableItems
-  - refreshListData
+  - onAddItem()
+  - onEditItem()
+  - onSaveItems()
+  - onPrintItems()
+  - onShowDetails()
+  - onExportItems()
+  - onDeleteItems()
+  - onEnableItems()
+  - onDisableItems()
+  - refreshListData()
 ```
 ### Usage
 
@@ -44,7 +42,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   		[primaryKey]="primaryKey" 
   		[headers]="headers" 
   		[list]="list" 
-      [totalItems] = "totalItems"
+  		[totalItems] = "totalItems"
   		[pageNumber]="pageNumber"
   		[showDetails]="showDetails" 
   		[showAddEditDeleteBtn]="showAddEditDeleteBtn" 
@@ -74,14 +72,14 @@ export class TableManagementComponent implements OnInit {
   public pageNumber: Number = 1;
   public totalItems: Number = 0;
   public primaryKey: String = 'id';
-  public heading: string = 'TABLE MANAGEMENT';
+  public heading: String = 'TABLE MANAGEMENT';
 
-  public showCSVBtn: boolean = true;
+  public showCSVBtn: Boolean = true;
   public showDetails: Boolean = true;
-  public showPrintBtn: boolean = true;
-  public showSearchBtn: boolean = true;
-  public showEnableDisableBtn: boolean = true;
-  public showAddEditDeleteBtn: boolean = true;
+  public showPrintBtn: Boolean = true;
+  public showSearchBtn: Boolean = true;
+  public showEnableDisableBtn: Boolean = true;
+  public showAddEditDeleteBtn: Boolean = true;
 
   constructor() { }
 
